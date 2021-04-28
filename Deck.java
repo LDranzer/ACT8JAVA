@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.lang.Throwable;
 /**
  *
  * @author LDranzer
@@ -35,7 +36,7 @@ public class Deck {
         }
     }
     
-    public void pick(){
+    public void pick() throws Exception{
         Random rand = new Random();
             int i = rand.nextInt();
             int o = rand.nextInt();
@@ -49,7 +50,7 @@ public class Deck {
         
     }
     
-    public void hand(){
+    public void hand() throws Exception{
         
         Random rand = null;
             int i = rand.nextInt();
@@ -60,7 +61,7 @@ public class Deck {
         System.out.println(sa+" "+se+" "+si+" ");
     }
     
-        public void head(){
+        public void head() throws Exception{
         String sa = palo.Color[0];
         String se = palo.Palo[0];
         String si = palo.Valor[0];

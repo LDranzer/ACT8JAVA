@@ -21,7 +21,12 @@ public class Act8 {
         
         Scanner sc = new Scanner(System.in);
         
-        showMenu();
+        try{
+        showMenu();}
+        catch(Exception e){
+            System.out.println("Opcion no valida" + e);
+            main(args);
+        }
         
         System.out.println("Ingresa valor");
         
@@ -32,16 +37,30 @@ public class Act8 {
                 deck.shuffle();
                 break;
             case 2:
+                try{
                 deck.pick();
+                }catch(Exception e){
+                    System.out.println("Se han agotado las cartas "+e);
+                }
+                
                 break;
             case 3:
+                try{
                 deck.head();
+                }catch(Exception e){
+                    System.out.println("Se han agotado las cartas "+e);
+                }
                 break;
             case 4:
+                try{
                 deck.hand();
+                }catch(Exception e){
+                    System.out.println("Se han agotado las cartas "+e);
+                }
                 break;
             default:
                 System.out.println("Dame un valor de verdad");
+                main(args);
                 break;
         }
         
@@ -50,7 +69,7 @@ public class Act8 {
         
     }
     
-    public static void showMenu(){
+    public static void showMenu() throws Exception{
         
         System.out.println("Escoge la opción");
         System.out.println("Shuffle");
